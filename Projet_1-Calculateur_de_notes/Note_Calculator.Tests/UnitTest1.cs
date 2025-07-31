@@ -16,10 +16,10 @@ public class Students_withAverage10OrAbove_ValidsYear
     {
         //Arrange:  On donne le contexte du test
         var student = new Student();
-        student.SetNotes(10, 12, 14);
+        student.AddNotes(10, 12, 14);
 
         //Act:      On execute le test
-        bool isValid = student.Validate();
+        bool isValid = student.IsValidating();
 
         //Assert:   On vérifie le résultat attendu
         Assert.True(isValid);
