@@ -1,0 +1,20 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Note_Calculator.Domain -> /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Domain/bin/Debug/net9.0/Note_Calculator.Domain.dll
+  Note_Calculator.Tests -> /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/bin/Debug/net9.0/Note_Calculator.Tests.dll
+Série de tests pour /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/bin/Debug/net9.0/Note_Calculator.Tests.dll (.NETCoreApp,Version=v9.0)
+Version de VSTest 17.12.0 (x64)
+
+Démarrage de l'exécution de tests, patientez...
+Au total, 1 fichiers de test ont correspondu au modèle spécifié.
+  Échoué Note_Calculator.Tests.Students_withAverage10OrAbove_ValidsYear.studentIsValidatingYear [2 ms]
+  Message d'erreur :
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Arborescence des appels de procédure :
+     at Note_Calculator.Tests.Students_withAverage10OrAbove_ValidsYear.studentIsValidatingYear() in /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/UnitTest1.cs:line 25
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Échoué!  - échec :     1, réussite :     0, ignorée(s) :     0, total :     1, durée : 2 ms - Note_Calculator.Tests.dll (net9.0)
