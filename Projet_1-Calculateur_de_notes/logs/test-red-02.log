@@ -1,0 +1,61 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Note_Calculator.Domain -> /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Domain/bin/Debug/net9.0/Note_Calculator.Domain.dll
+  Note_Calculator.Tests -> /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/bin/Debug/net9.0/Note_Calculator.Tests.dll
+Série de tests pour /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/bin/Debug/net9.0/Note_Calculator.Tests.dll (.NETCoreApp,Version=v9.0)
+Version de VSTest 17.12.0 (x64)
+
+Démarrage de l'exécution de tests, patientez...
+Au total, 1 fichiers de test ont correspondu au modèle spécifié.
+  Échoué Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(notes: [14, 15, 16], expectedMention: "Bien") [5 ms]
+  Message d'erreur :
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "Bien"
+Actual:   ""
+  Arborescence des appels de procédure :
+     at Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(Int32[] notes, String expectedMention) in /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/StudentMentionTest.cs:line 24
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Échoué Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(notes: [10, 10, 11], expectedMention: "Passable") [< 1 ms]
+  Message d'erreur :
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "Passable"
+Actual:   ""
+  Arborescence des appels de procédure :
+     at Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(Int32[] notes, String expectedMention) in /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/StudentMentionTest.cs:line 24
+   at InvokeStub_Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Échoué Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(notes: [17, 18, 19], expectedMention: "Très bien") [< 1 ms]
+  Message d'erreur :
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "Très bien"
+Actual:   ""
+  Arborescence des appels de procédure :
+     at Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(Int32[] notes, String expectedMention) in /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/StudentMentionTest.cs:line 24
+   at InvokeStub_Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Échoué Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(notes: [8, 9, 10], expectedMention: "Refusé") [< 1 ms]
+  Message d'erreur :
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "Refusé"
+Actual:   ""
+  Arborescence des appels de procédure :
+     at Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(Int32[] notes, String expectedMention) in /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/StudentMentionTest.cs:line 24
+   at InvokeStub_Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Échoué Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(notes: [12, 13, 14], expectedMention: "Assez bien") [< 1 ms]
+  Message d'erreur :
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "Assez bien"
+Actual:   ""
+  Arborescence des appels de procédure :
+     at Note_Calculator.Tests.Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(Int32[] notes, String expectedMention) in /home/murphy/Documents/Travail/Dev/Projet Perso/Portfolio/Projet_1-Calculateur_de_notes/Note_Calculator.Tests/StudentMentionTest.cs:line 24
+   at InvokeStub_Students_withSpecificAverage_GetSpecificMention.studentIsValidatingYear(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+
+Échoué!  - échec :     5, réussite :     1, ignorée(s) :     0, total :     6, durée : 17 ms - Note_Calculator.Tests.dll (net9.0)
