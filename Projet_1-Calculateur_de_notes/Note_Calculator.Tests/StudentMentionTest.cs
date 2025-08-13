@@ -18,7 +18,7 @@ public class Students_withSpecificAverage_GetSpecificMention
         student.AddNotes(notes);
 
         //Act:      On execute le test
-        var mention = student.getsMention();
+        var mention = student.GetsMention();
 
         //Assert:   On vérifie le résultat attendu
         Assert.Equal(expectedMention, mention);
