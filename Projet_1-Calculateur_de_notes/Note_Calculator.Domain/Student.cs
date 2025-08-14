@@ -13,20 +13,42 @@ namespace Note_Calculator.Domain;
 //     ≥ 12 → Assez bien
 //     ≥ 10 → Passable
 //     < 10 → Refusé
+
 public class Student
 {
-    private readonly List<int> _notes = new();
-    private readonly List<(double noteReq, string Mention)> MentionRanges = new()
+    //Attribut ----------------------
+    private readonly    List<int>                                   _notes = new();
+    private readonly    Student_Exception                           _exceptionMsg = new();
+
+    private readonly    List<(double noteReq, string Mention)>      MentionRanges = new()
     {
         (16, "Très bien"),
         (14, "Bien"),
         (12, "Assez bien"),
         (10, "Passable"),
     };
-    private const string MentionDenied = "Refusé";
+    
 
-    public void AddNotes(params int[] notes)
+
+    //Méthodes ----------------------
+    private void CheckNotes(int[]   notes)
     {
+        if (notes is null || notes.Length == 0)
+            throw new ArgumentException(_exceptionMsg.NotesEmpty);
+        else
+        {
+            foreach(double note in notes)
+            {
+                if (note < 0 || note > 20)
+                    throw new ArgumentException(_exceptionMsg.NotesOutOfRange);
+
+            }
+        }
+    }
+
+    public void AddNotes(params int[]   notes)
+    {
+        CheckNotes(notes);
         _notes.AddRange(notes);
     }
 
@@ -40,10 +62,10 @@ public class Student
 
     public string GetsMention()
     {
-        double average = _notes.Average();
+        if (!_notes.Any() || _notes.Count == 0)
+            return _exceptionMsg.MentionDenied;
 
-        if (!_notes.Any())
-            return MentionDenied;
+        double average = _notes.Average();
 
         foreach(var (note, mention) in MentionRanges)
         {
@@ -51,11 +73,11 @@ public class Student
                 return mention;
         }
 
-        return MentionDenied;
+        return _exceptionMsg.MentionDenied;
     }
 
-    public List<int> GetNotes()
+    public IReadOnlyList<int> GetNotes()
     {
-        return null;
+        return _notes.AsReadOnly();
     }
 }

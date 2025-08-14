@@ -56,11 +56,8 @@ public class Student_CriticalCases_Tests
         //Arrange
         var student = new Student();
 
-        //Act
-        student.AddNotes(-12, 0, 45);
-
-        //Assert
-        var expectedNotes = new List<int> { 0 };
-        Assert.Equal(expectedNotes, student.GetNotes());
+        //Assert & Act
+        var exception = Assert.Throws<ArgumentException>(() => student.AddNotes(-12, 0, 45));
+        Assert.Equal("Une des notes est hors de la plage autorisée (0 à 20).", exception.Message);
     }
 }
