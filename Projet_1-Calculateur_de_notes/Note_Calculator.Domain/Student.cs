@@ -53,4 +53,9 @@ public class Student
 
         return MentionDenied;
     }
+
+    public List<int> GetNotes()
+    {
+        return null;
+    }
 }
