@@ -11,13 +11,9 @@ public class Student_CriticalCases_Tests
         //Arrange
         var student = new Student();
 
-        //Act
-        bool isValid = student.IsValidating();
-        string mention = student.GetsMention();
-    
-        //Assert
-        Assert.False(isValid);
-        Assert.Equal("Refusé", mention);
+        //Act & Assert
+        var exception = Assert.Throws<ArgumentException>(() => student.GetMention());
+        Assert.Equal("La liste de notes est vide.", exception.Message);
     }
 
     [Fact]
@@ -28,7 +24,7 @@ public class Student_CriticalCases_Tests
         student.AddNotes(10, 10, 10);
 
         //Act
-        bool isValid = student.IsValidating();
+        bool isValid = student.IsPassingYear();
     
         //Assert
         Assert.True(isValid);
@@ -42,8 +38,8 @@ public class Student_CriticalCases_Tests
         student.AddNotes(10);
 
         //Act
-        bool isValid = student.IsValidating();
-        string mention = student.GetsMention();
+        bool isValid = student.IsPassingYear();
+        string mention = student.GetMention();
     
         //Assert
         Assert.True(isValid);

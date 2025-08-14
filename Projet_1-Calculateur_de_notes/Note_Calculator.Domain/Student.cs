@@ -20,7 +20,7 @@ public class Student
     private readonly    List<int>                                   _notes = new();
     private readonly    Student_Exception                           _exceptionMsg = new();
 
-    private readonly    List<(double noteReq, string Mention)>      MentionRanges = new()
+    private readonly    List<(double noteReq, string Mention)>      _mentionRanges = new()
     {
         (16, "Très bien"),
         (14, "Bien"),
@@ -30,29 +30,35 @@ public class Student
     
 
 
-    //Méthodes ----------------------
-    private void CheckNotes(int[]   notes)
+    //Checks ----------------------
+    private void    CheckIfEmpty(int[] notes)
     {
         if (notes is null || notes.Length == 0)
             throw new ArgumentException(_exceptionMsg.NotesEmpty);
-        else
-        {
-            foreach(double note in notes)
-            {
-                if (note < 0 || note > 20)
-                    throw new ArgumentException(_exceptionMsg.NotesOutOfRange);
+    }
+    private void    CheckRange(int[] notes)
+    {
+        foreach(double note in notes)
+            if (note < 0 || note > 20)
+                throw new ArgumentException(_exceptionMsg.NotesOutOfRange);
 
-            }
-        }
     }
 
-    public void AddNotes(params int[]   notes)
+    private void    CheckNotes(int[]   notes)
+    {
+        CheckIfEmpty(notes);
+        CheckRange(notes);
+    }
+
+
+    //Méthodes ----------------------
+    public void     AddNotes(params int[]   notes)
     {
         CheckNotes(notes);
         _notes.AddRange(notes);
     }
 
-    public bool IsValidating()
+    public bool     IsPassingYear()
     {
         if (_notes.Count == 0)
             return false;
@@ -60,14 +66,12 @@ public class Student
         return (_notes.Average()) >= 10;
     }
 
-    public string GetsMention()
+    public string   GetMention()
     {
-        if (!_notes.Any() || _notes.Count == 0)
-            return _exceptionMsg.MentionDenied;
-
+        CheckNotes(_notes.ToArray());
         double average = _notes.Average();
 
-        foreach(var (note, mention) in MentionRanges)
+        foreach(var (note, mention) in _mentionRanges)
         {
             if (average >= note)
                 return mention;
@@ -76,7 +80,7 @@ public class Student
         return _exceptionMsg.MentionDenied;
     }
 
-    public IReadOnlyList<int> GetNotes()
+    public IReadOnlyList<int>   GetNotes()
     {
         return _notes.AsReadOnly();
     }

@@ -19,7 +19,7 @@ public class Students_withAverage10OrAbove_ValidsYear
         student.AddNotes(10, 12, 14);
 
         //Act:      On execute le test
-        bool isValid = student.IsValidating();
+        bool isValid = student.IsPassingYear();
 
         //Assert:   On vérifie le résultat attendu
         Assert.True(isValid);
