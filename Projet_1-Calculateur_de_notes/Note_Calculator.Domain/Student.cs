@@ -17,7 +17,7 @@ namespace Note_Calculator.Domain;
 public class Student
 {
     //Attribut ----------------------
-    private readonly    List<int>                                   _notes = new();
+    private readonly    List<double>                                   _notes = new();
     private readonly    Student_Exception                           _exceptionMsg = new();
 
     private readonly    List<(double noteReq, string Mention)>      _mentionRanges = new()
@@ -31,12 +31,12 @@ public class Student
 
 
     //Checks ----------------------
-    private void    CheckIfEmpty(int[] notes)
+    private void    CheckIfEmpty(double[] notes)
     {
         if (notes is null || notes.Length == 0)
             throw new ArgumentException(_exceptionMsg.NotesEmpty);
     }
-    private void    CheckRange(int[] notes)
+    private void    CheckRange(double[] notes)
     {
         foreach(double note in notes)
             if (note < 0 || note > 20)
@@ -44,7 +44,7 @@ public class Student
 
     }
 
-    private void    CheckNotes(int[]   notes)
+    private void    CheckNotes(double[]   notes)
     {
         CheckIfEmpty(notes);
         CheckRange(notes);
@@ -52,7 +52,7 @@ public class Student
 
 
     //Méthodes ----------------------
-    public void     AddNotes(params int[]   notes)
+    public void     AddNotes(params double[]   notes)
     {
         CheckNotes(notes);
         _notes.AddRange(notes);
@@ -80,7 +80,7 @@ public class Student
         return _exceptionMsg.MentionDenied;
     }
 
-    public IReadOnlyList<int>   GetNotes()
+    public IReadOnlyList<double>   GetNotes()
     {
         return _notes.AsReadOnly();
     }
