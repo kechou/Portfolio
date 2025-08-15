@@ -1,49 +1,83 @@
-# Projet 1 – Calculateur de notes
+# 🎓 Projet 1 – Calculateur de notes
 
 ## 🎯 Objectif pédagogique
 
-Apprendre le **Test Driven Development (TDD)** en C# avec xUnit, sans base de données ni UI.
+Appliquer les principes du **Test Driven Development (TDD)** en C#, sans interface graphique ni base de données.
+
+> 👉 Ce projet sert de base pour comprendre la logique métier, l'approche orientée tests, et les fondations d'une architecture propre.
+
+---
 
 ## 🧠 Concepts travaillés
 
-- TDD (Test Driven Development)
-- Écriture de tests en premier
-- Conception d’un petit domaine métier
+- ✅ TDD (Test Driven Development)
+- ✅ Écriture de tests unitaires en premier
+- ✅ Séparation des responsabilités (Clean Code)
+- ✅ Conception d’un petit domaine métier pur
+- ✅ Validation d’entrées et gestion des erreurs
 
-## 🧱 Domaines / Classes
+---
 
-- Étudiant
-- Matière
-- Note
+## 🧱 Modèle métier
+
+- **Student (Étudiant)** : gère la liste des notes, la validation et la mention
+- *(Matière et Note prévues dans une future version plus riche)*
+
+---
 
 ## ⚙️ Fonctionnalités
 
-- Calcul de moyenne
-- Attribution d’une mention
-- Détermination de la validation
+- Ajout de notes via le terminal
+- Calcul de la **moyenne**
+- Attribution d’une **mention** selon la moyenne
+- Détermination si l’élève **valide son année**
+- Interface **CLI simple et intuitive**
 
-## 🔍 Comportement attendu
+---
 
-Le calculateur de notes fonctionne selon les règles suivantes :
+## 🔍 Règles de validation
 
-1. **Calcul de la moyenne**
-   - La moyenne est la somme des notes divisée par leur nombre
+### 📊 Calcul de la moyenne
+> Moyenne = Somme des notes / Nombre de notes
 
-2. **Attribution de la mention** (en fonction de la moyenne)
-   - ≥ 16 : Très bien
-   - ≥ 14 : Bien
-   - ≥ 12 : Assez bien
-   - ≥ 10 : Passable
-   - < 10 : Insuffisant
+### 🏅 Attribution des mentions
 
-3. **Validation**
-   - L’élève est validé si la moyenne ≥ 10
+| Moyenne | Mention       |
+|---------|----------------|
+| ≥ 16    | Très bien      |
+| ≥ 14    | Bien           |
+| ≥ 12    | Assez bien     |
+| ≥ 10    | Passable       |
+| < 10    | Refusé         |
 
+### ✅ Validation
 
-## 🧪 Stack technique
+Un étudiant est **validé** si sa moyenne est **≥ 10**.
 
-- .NET 8
-- xUnit
-- Structure :
-  - `NoteCalculator.Domain` : logique métier (sans dépendances)
-  - `NoteCalculator.Tests` : tests unitaires avec xUnit
+---
+
+## 💻 Stack technique
+
+- **Langage** : C# (.NET 8)
+- **Tests** : [xUnit](https://xunit.net/)
+- **CLI** : Application console (terminal ASCII)
+- **Structure du projet** :
+  - `Note_Calculator.Domain` : logique métier (clean, testable, sans dépendances)
+  - `Note_Calculator.Tests` : tests unitaires (xUnit)
+  - `Note_Calculator.Cli` : interface terminal pour tester le calculateur
+
+---
+
+## 🚀 Utilisation
+
+```bash
+# Restauration et build
+dotnet restore
+dotnet build
+
+# Lancer les tests
+dotnet test
+
+# Lancer l’application
+cd Note_Calculator.Cli
+dotnet run
