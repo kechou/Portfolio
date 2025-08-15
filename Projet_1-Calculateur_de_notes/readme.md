@@ -6,7 +6,7 @@ Appliquer les principes du **Test Driven Development (TDD)** en C#, sans interfa
 
 > 👉 Ce projet sert de base pour comprendre la logique métier, l'approche orientée tests, et les fondations d'une architecture propre.
 
-
+---
 
 ## 🧠 Concepts travaillés
 
@@ -16,14 +16,14 @@ Appliquer les principes du **Test Driven Development (TDD)** en C#, sans interfa
 - ✅ Conception d’un petit domaine métier pur
 - ✅ Validation d’entrées et gestion des erreurs
 
-
+---
 
 ## 🧱 Modèle métier
 
 - **Student (Étudiant)** : gère la liste des notes, la validation et la mention
 - *(Matière et Note prévues dans une future version plus riche)*
 
-
+---
 
 ## ⚙️ Fonctionnalités
 
@@ -33,7 +33,7 @@ Appliquer les principes du **Test Driven Development (TDD)** en C#, sans interfa
 - Détermination si l’élève **valide son année**
 - Interface **CLI simple et intuitive**
 
-
+---
 
 ## 🔍 Règles de validation
 
@@ -54,7 +54,7 @@ Appliquer les principes du **Test Driven Development (TDD)** en C#, sans interfa
 
 Un étudiant est **validé** si sa moyenne est **≥ 10**.
 
-
+---
 
 ## 💻 Stack technique
 
@@ -66,7 +66,7 @@ Un étudiant est **validé** si sa moyenne est **≥ 10**.
   - `Note_Calculator.Tests` : tests unitaires (xUnit)
   - `Note_Calculator.Cli` : interface terminal pour tester le calculateur
 
-
+---
 
 ## 🚀 Utilisation
 
